@@ -54,7 +54,7 @@ public final class ChangeMaker {
 			for(int j=0; j<nCoins; j++){
 				if(i >= coins[j]){ //i is the current change value
 					if(1 + CM[i - coins[j]] < min){ //coin j taken
-						//TODO: Update min and CM[i]
+						//Update min and CM[i]
 						min = 1 + CM[i - coins[j]];
 						CM[i] = min;
 						decision[i] = j;
@@ -68,7 +68,7 @@ public final class ChangeMaker {
 		int cur = change; //start from the largest subproblem
 		for(int i=0; i<CM[change]; i++){ //CM[change] is the minimum number of coins
 				//decision[cur] is the coin number selected at subproblem cur
-				//TODO: Add the selected coin value (coins[decision[cur]]) to selectedCoins
+				//Add the selected coin value (coins[decision[cur]]) to selectedCoins
 				selectedCoins.add(coins[decision[cur]]);
 				cur = cur - coins[decision[cur]]; //the next subproblem is cur - coins[decision[cur]]
 		}

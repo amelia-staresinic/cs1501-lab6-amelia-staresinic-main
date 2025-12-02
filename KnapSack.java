@@ -65,8 +65,7 @@ public final class KnapSack {
               KS[i][j] = items[i-1].value + KS[i-1][j-items[i-1].weight];
               decision[i][j] = 1; //item i-1 taken
             } else {
-              //TODO: Update KS[i][j] and decision[i][j] to reflect that
-              //TODO: item i-1 wasn't taken
+              //Update KS[i][j] and decision[i][j] to reflect that
 			  KS[i][j] = KS[i-1][j];
 			  decision[i][j] = 0;
             }
@@ -83,8 +82,7 @@ public final class KnapSack {
     for(int curRow = nItems; curRow >= 0; curRow--){
       if(decision[curRow][curCol] == 1){ //item curRow-1 was taken
         selectedItems.add(items[curRow-1]);
-				//TODO: Update the current column (curCol) in the KS array
-				//TODO: Hint: It should move to the left
+		//Update the current column (curCol) in the KS array
 		curCol -= items[curRow-1].weight;
       }
     }
